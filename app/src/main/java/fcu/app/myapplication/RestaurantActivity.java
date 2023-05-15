@@ -23,7 +23,7 @@ public class RestaurantActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(v.getId() == R.id.r_btn_menu){
-                    Intent intent = new Intent(RestaurantActivity.this, Menu_1Activity.class);
+                    Intent intent = new Intent(RestaurantActivity.this, MenuActivity.class);
                     startActivity(intent);
                 }
             }
