@@ -9,26 +9,26 @@ import android.widget.Button;
 
 public class RestaurantActivity extends AppCompatActivity {
 
-    private Button btnMenu;
+    private Button btnFcu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
-        btnMenu = findViewById(R.id.r_btn_menu);
+        btnFcu = findViewById(R.id.btn_fcu);
 
         Button.OnClickListener listener = new Button.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                if(v.getId() == R.id.r_btn_menu){
+                if(v.getId() == R.id.btn_fcu){
                     Intent intent = new Intent(RestaurantActivity.this, MenuActivity.class);
                     startActivity(intent);
                 }
             }
         };
-         btnMenu.setOnClickListener(listener);
+        btnFcu.setOnClickListener(listener);
 
     }
 }

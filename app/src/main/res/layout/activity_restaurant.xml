@@ -7,7 +7,7 @@
     tools:context=".RestaurantActivity">
 
     <Button
-        android:id="@+id/r_btn_menu"
+        android:id="@+id/btn_fcu"
         android:layout_width="120dp"
         android:layout_height="52dp"
         android:layout_marginTop="144dp"
