@@ -8,25 +8,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
-  private Button btnCarts;
+  private Button btnMenuCarts;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_menu);
 
-    btnCarts = findViewById(R.id.btn_carts);
+    btnMenuCarts = findViewById(R.id.btn_menu_carts);
 
     Button.OnClickListener listener = new Button.OnClickListener(){
 
       @Override
       public void onClick(View v) {
-        if(v.getId() == R.id.btn_carts){
+        if(v.getId() == R.id.btn_menu_carts){
           Intent intent = new Intent(MenuActivity.this, CartsActivity.class);
           startActivity(intent);
         }
       }
     };
-    btnCarts.setOnClickListener(listener);
+    btnMenuCarts.setOnClickListener(listener);
   }
 }
