@@ -20,9 +20,6 @@
             android:name=".RestaurantActivity"
             android:exported="false" />
         <activity
-            android:name=".CartsActivity"
-            android:exported="false" />
-        <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity

@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         if(v.getId() == R.id.btn_carts){
-          Intent intent = new Intent(MenuActivity.this, CartsActivity.class);
+          Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           startActivity(intent);
         }
       }
