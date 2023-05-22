@@ -16,13 +16,13 @@ public class SignupActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_signup);
 
-    btnSignupEnter = findViewById(R.id.btn_signup_enter);
+    btnSignupEnter = findViewById(R.id.btn_account_enter);
 
     Button.OnClickListener listener = new Button.OnClickListener(){
 
       @Override
       public void onClick(View v) {
-        if(v.getId() == R.id.btn_signup_enter){
+        if(v.getId() == R.id.btn_account_enter){
           Intent intent = new Intent(SignupActivity.this, MainActivity.class);
           startActivity(intent);
         }
