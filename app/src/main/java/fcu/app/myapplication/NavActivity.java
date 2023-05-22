@@ -1,6 +1,9 @@
 package fcu.app.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -13,7 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 import fcu.app.myapplication.databinding.ActivityNavBinding;
 
 public class NavActivity extends AppCompatActivity {
-
+  private Button btnStore;
   private ActivityNavBinding binding;
 
   @Override
@@ -32,6 +35,20 @@ public class NavActivity extends AppCompatActivity {
     NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_nav);
     /*NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);*/
     NavigationUI.setupWithNavController(binding.navView, navController);
+    btnStore = findViewById(R.id.btn_store);
+    Button.OnClickListener listener = new Button.OnClickListener(){
+      @Override
+      public void onClick(View v) {
+        if(v.getId() == R.id.btn_store){
+          Intent intent = new Intent(NavActivity.this, StoreActivity.class);
+          startActivity(intent);
+        }
+      }
+    };
+
+    btnStore.setOnClickListener(listener);
+
   }
+
 
 }
