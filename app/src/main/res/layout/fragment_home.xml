@@ -46,4 +46,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="208dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/me"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <Button
+        android:id="@+id/btn_toMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="136dp"
+        android:text="前往菜單"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_store"
+        app:layout_constraintVertical_bias="0.99" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

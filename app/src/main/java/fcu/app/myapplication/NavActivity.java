@@ -17,6 +17,7 @@ import fcu.app.myapplication.databinding.ActivityNavBinding;
 
 public class NavActivity extends AppCompatActivity {
   private Button btnStore;
+  private Button btnToMenu;
   private ActivityNavBinding binding;
 
   @Override
@@ -36,6 +37,7 @@ public class NavActivity extends AppCompatActivity {
     /*NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);*/
     NavigationUI.setupWithNavController(binding.navView, navController);
     btnStore = findViewById(R.id.btn_store);
+    btnToMenu = findViewById(R.id.btn_toMenu);
     Button.OnClickListener listener = new Button.OnClickListener(){
       @Override
       public void onClick(View v) {
@@ -43,10 +45,15 @@ public class NavActivity extends AppCompatActivity {
           Intent intent = new Intent(NavActivity.this, StoreActivity.class);
           startActivity(intent);
         }
+        else if(v.getId() == R.id.btn_toMenu){
+          Intent intent = new Intent(NavActivity.this, MenuActivity.class);
+          startActivity(intent);
+        }
       }
     };
 
     btnStore.setOnClickListener(listener);
+    btnToMenu.setOnClickListener(listener);
 
   }
 
