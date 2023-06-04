@@ -126,4 +126,14 @@
         app:layout_constraintStart_toEndOf="@+id/editTextText2"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
+    <TextView
+        android:id="@+id/tv_display_menu"
+        android:layout_width="107dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -19,6 +21,8 @@ public class NavActivity extends AppCompatActivity {
   private Button btnStore;
   private Button btnToMenu;
   private ActivityNavBinding binding;
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,24 +40,40 @@ public class NavActivity extends AppCompatActivity {
     NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_nav);
     /*NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);*/
     NavigationUI.setupWithNavController(binding.navView, navController);
-    btnStore = findViewById(R.id.btn_store);
-    btnToMenu = findViewById(R.id.btn_toMenu);
-    Button.OnClickListener listener = new Button.OnClickListener(){
-      @Override
-      public void onClick(View v) {
-        if(v.getId() == R.id.btn_store){
-          Intent intent = new Intent(NavActivity.this, StoreActivity.class);
-          startActivity(intent);
-        }
-        else if(v.getId() == R.id.btn_toMenu){
-          Intent intent = new Intent(NavActivity.this, MenuActivity.class);
-          startActivity(intent);
-        }
-      }
-    };
 
-    btnStore.setOnClickListener(listener);
-    btnToMenu.setOnClickListener(listener);
+    NavDestination currentDestination = navController.getCurrentDestination();
+    if (currentDestination.getId() == R.id.navigation_home) {
+      // 處理 HomePageFragment 上的按鈕點擊事件
+    } else if (currentDestination.getId() == R.id.navigation_dashboard) {
+      btnStore = findViewById(R.id.btn_store);
+      btnToMenu = findViewById(R.id.btn_toMenu);
+      Button.OnClickListener listener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          if (view.getId() == R.id.btn_store) {
+            Intent intent = new Intent(NavActivity.this, StoreActivity.class);
+            startActivity(intent);
+          } else if (view.getId() == R.id.btn_toMenu) {
+            Intent intent = new Intent(NavActivity.this, MenuActivity.class);
+            startActivity(intent);
+          }
+        }
+
+
+      };
+      btnStore.setOnClickListener(listener);
+      btnToMenu.setOnClickListener(listener);
+
+      String selectedMeal = getIntent().getStringExtra("selectedMeal");
+      TextView displayTextView = findViewById(R.id.tv_display_menu);
+      displayTextView.setText(selectedMeal);
+    }else if (currentDestination.getId() == R.id.navigation_notifications) {
+      // 處理 NotificationsFragment 上的按鈕點擊事件
+    }
+
+
+
 
   }
 
