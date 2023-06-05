@@ -1,6 +1,9 @@
 package fcu.app.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
+import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,54 +52,73 @@ public class MenuActivity extends AppCompatActivity {
       }
     };
 
+
     View.OnClickListener listener1 = new View.OnClickListener(){
 
       @Override
       public void onClick(View view) {
-        if(view.getId() == R.id.meal_1){
+        if (view.getId() == R.id.meal_1) {
           String selectedMeal = tvMeal1.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
+
+
+
+
+
+
+
+
+
         } else if(view.getId() == R.id.meal_2){
           String selectedMeal = tvMeal2.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_3) {
           String selectedMeal = tvMeal3.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_4){
           String selectedMeal = tvMeal4.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_5){
           String selectedMeal = tvMeal5.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_6){
           String selectedMeal = tvMeal6.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_7){
           String selectedMeal = tvMeal7.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_8){
           String selectedMeal = tvMeal8.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         } else if(view.getId() == R.id.meal_9){
           String selectedMeal = tvMeal9.getText().toString();
           Intent intent = new Intent(MenuActivity.this, NavActivity.class);
           intent.putExtra("selectedMeal", selectedMeal);
+          intent.putExtra("destination", R.id.navigation_dashboard);
           startActivity(intent);
         }
       }
